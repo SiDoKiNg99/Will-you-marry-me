@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Marry Me?</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d63384;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      color: white;
+      margin: 20px;
+    }
+
+    #noBtn {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      background-color: #cccccc;
+      color: black;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will You Marry Me?</h1>
+  <button id="yesBtn" onclick="alert('Yay! I love you!')">Yes</button>
+  <button id="noBtn" onclick="resizeButtons()">No</button>
+
+  <script>
+    let yesFontSize = 1.5;
+    let yesPadding = 15;
+    let noFontSize = 1.5;
+    let noPadding = 15;
+
+    function resizeButtons() {
+      // Increase Yes size
+      yesFontSize += 0.2;
+      yesPadding += 2;
+
+      // Decrease No size
+      noFontSize = Math.max(0.5, noFontSize - 0.2);
+      noPadding = Math.max(5, noPadding - 2);
+
+      document.getElementById('yesBtn').style.fontSize = yesFontSize + 'em';
+      document.getElementById('yesBtn').style.padding = yesPadding + 'px ' + (yesPadding * 2) + 'px';
+
+      document.getElementById('noBtn').style.fontSize = noFontSize + 'em';
+      document.getElementById('noBtn').style.padding = noPadding + 'px ' + (noPadding * 2) + 'px';
+    }
+  </script>
+</body>
+</html>
